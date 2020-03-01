@@ -35,9 +35,90 @@
         </div>
     </nav>
 
+    <!-- Title with search bar at the top of the page -->
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid text-center">
+            <h1>Botanizer Search</h1>
+            <form>
+                <div class="form-row form-fluid">
+                    <div class="col-md-3">
+                        <!-- Filler column to center the search bar -->
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="searchInputID" placeholder="Plant Name">
+                    </div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-success" onclick="populateResults('resultsTableBodyID')">Search</button>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- Filler column to center the search bar -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hidden table for results (Unhidden when a valid search occurs) -->
+    <div class="container">
+        <table class="table table-light" id="resultsTableID">    <!-- d-none class makes table not display, toggle to d-block to dislpay -->
+            <thead>
+                <tr>
+                    <th>Results</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBodyID">
+                <tr>
+                    <h5 class="text-center">Filters</h5>
+                </tr>
+                <tr>
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-sm-3 text-right">Lighting:</div>
+                            <div class="col-sm-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="lightingFiltersDarkID" value="Dark">
+                                    <label class="form-check-label" for="lightingFiltersDarkID">Dark</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="lightingFiltersDimID" value="Dim">
+                                    <label class="form-check-label" for="lightintFiltersDimID">Dim</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="lightingFiltersBrightID" value="Bright">
+                                    <label class="form-check-label" for="lightintFiltersBrightID">Bright</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="lightingFiltersDirectSunID" value="DirectSun">
+                                    <label class="form-check-label" for="lightintFiltersDirectSunID">Direct Sunlight</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-right">Soil Moisture:</div>
+                            <div class="col-sm-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="soilMoistureDryID" value="Dry">
+                                    <label class="form-check-label" for="soilMoistureDryID">Dry</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="soilMoistureDampID" value="Damp">
+                                    <label class="form-check-label" for="soilMoistureDampID">Damp</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="soilMoistureFloodedID" value="Flooded">
+                                    <label class="form-check-label" for="soilMoistureFloodedID">Flooded</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </tr>
+                <!-- Gets filled by results from JavaScript function -->
+            </tbody>
+        </table>
+    </div>
+
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	<script src="../Resources/JavaScript/scripts.js"></script>
+	<script src="../Resources/JavaScript/searchScripts.js"></script>
 </body>
 </html>
