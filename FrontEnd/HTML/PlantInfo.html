@@ -37,20 +37,44 @@
     <container>
       <div class="inline">
       <!-- Plant image -->
-        <img class="pimg rounded" style="float:left; margin-left:50px;" width="500" height="500" src= "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/3551/10835/mammillaria_matudae2__33257.1572374121.jpg?c=2">
+        <img class="pimg rounded" style="float:left; margin-left:50px; margin-top:50px; border: solid;" width="500" height="500" src= "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/3551/10835/mammillaria_matudae2__33257.1572374121.jpg?c=2">
       <!-- Plant name -->
-        <h1 class="text-center" style="margin-top:75px; margin-right:50px">plant_name</h1>
-        <br>
-        <br>
-        <br>
-        <p class="text-center" style="margin-right:50px"> Water Level:&nbsp;&nbsp;&nbsp;&nbsp;<var>water</var> </p>
+        <div class="jumbotron jumbotron-fluid bg-success text-white">
+          <div class="container">
+            <h1 style="margin-top:75px; position: absolute; right: 0; top: 0; margin-right:375px;">plant_name</h1>
+          </div>
+        </div>
+        <table class="table" style="max-width:500px; margin-right:auto; margin-left:auto; border:5px double black;">
+          <thead>
+              <tr>
+                <td scope="col">Water Level:</td>
+                <td scope="col"><var>water</var></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Light Level:</td>
+                <td><var>light</var></td>
+              </tr>
+              <tr>
+                <td scope="row">Temperature:</td>
+                <td><var>temp</var></td>
+              </tr>
+              <tr>
+                <td scope="row">Humidity:</td>
+                <td><var>hum</var></td>
+              </tr>
+              <tr>
+                <td scope="row">Soil pH:</td>
+                <td><var>soil</var></td>
+              </tr>
+            </tbody>
+          </table>
+        <!-- <p class="text-center" style="margin-right:50px"> Water Level:&nbsp;&nbsp;&nbsp;&nbsp;<var>water</var> </p>
         <p class="text-center" style="margin-right:50px">Light Level:&nbsp;&nbsp;&nbsp;&nbsp;<var>light</var></p>
         <p class="text-center" style="margin-right:50px">Temperature:&nbsp;&nbsp;&nbsp;&nbsp;<var>temp</var></p>
         <p class="text-center" style="margin-right:50px">Humidity:&nbsp;&nbsp;&nbsp;&nbsp;<var>hum</var></p>
-        <p class="text-center" style="margin-right:50px">Soil pH:&nbsp;&nbsp;&nbsp;&nbsp;<var>soil</var></p>
-      </div>
-      <div>
-
+        <p class="text-center" style="margin-right:50px">Soil pH:&nbsp;&nbsp;&nbsp;&nbsp;<var>soil</var></p> -->
       </div>
     </container>
 
