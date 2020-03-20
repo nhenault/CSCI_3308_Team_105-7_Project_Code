@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title>Survey</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <style>
+      .topnav {
+        background-color: #f2f2f2;
+        overflow: hidden;
+      }
+
+      /* Style the links inside the navigation bar */
+      .topnav a {
+        float: left;
+        display: block;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      /* Change the color of links on hover */
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+        text-decoration: none
+      }
+
+      /* Add an active class to highlight the current page */
+      .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      /* Hide the link that should open and close the topnav on small screens */
+      .topnav .icon {
+        display: none;
+      }
+
+      .center {
+        margin: auto;
+        width: 80%;
+        border: 3px solid green;
+        padding: 10px;
+
+        text-align: center;
+      }
+
+      </style>
+
+      </head>
+      <body>
+
+        <div class="topnav" id="myTopnav">
+          <a href="mypage_bootstrap.html">Home</a>
+
+          <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i> -->
+          <!-- </a> -->
+        </div>
+
+<!-- temp humidity water level light level soil ph difficulty -->
+        <div class= "text-align: center">
+
+          <div class = "display: inline-block">
+          <h1>Plant Survey</h1>
+          <br>
+             <label class = "checkbox-inline">
+                <label class = "h4" for="inlineCheckbox1">Choose preferred lighting:</label><br>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="darkId" value="dark">
+                    <label class= "form-check-label" for="darkId"> Dark </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="dimId" value="dim">
+                    <label class="form-check-label" for="dimId"> Dim </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="brightId" value="bright">
+                    <label class="form-check-label" for="brightId"> Bright </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="sunlightid" value="directSun">
+                    <label class="form-check-label" for="sunlightid"> Direct sunlight </label>
+                </div>
+
+             </label>
+             <br>
+             <br>
+             <label class = "checkbox-inline">
+                <label class = "h4" for="inlineCheckbox2">Choose a soil moisture level:</label><br>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="dryId" value="dry">
+                    <label class="form-check-label" for="dryId"> Dry </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="dampId" value="damp">
+                    <label class="form-check-label" for="dampId"> Damp </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="floodedId" value="flooded">
+                    <label class="form-check-label" for="floodedId"> Flooded </label>
+                </div>
+
+             </label>
+             <br>
+             <br>
+             <label class = "checkbox-inline">
+                <label class = "h4" for="inlineCheckbox3">Choose a care level:</label><br>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="easyId" value="dark">
+                    <label class="form-check-label" for="easyId"> Beginner </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="mediumId" value="Dim">
+                    <label class="form-check-label" for="mediumId"> Intermediate </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="hardId" value="bright">
+                    <label class="form-check-label" for="hardId"> Advanced </label>
+                </div>
+
+             </label>
+             <br>
+             <br>
+
+
+              <h4>Choose a preferred temperature range (F):</h4>
+              <div class="row h-100 justify-content-center align-items-center">
+               <form class="form-inline" action="/action_page.php">
+                 <label for="temp1" class="mr-sm-2">Low:</label>
+                 <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Low" id="temp1">
+                 <label for="temp2" class="mr-sm-2">High:</label>
+                 <input type="text" class="form-control mb-2 mr-sm-2" placeholder="High" id="temp2">
+               </form>
+             </div>
+
+               <br>
+               <br>
+
+              <h4>Choose a preferred humidity range (%):</h4>
+              <div class="row h-100 justify-content-center align-items-center">
+               <form class="form-inline" action="/action_page.php">
+                 <label for="temp1" class="mr-sm-2">Low:</label>
+                 <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Low" id="temp1">
+                 <label for="temp2" class="mr-sm-2">High:</label>
+                 <input type="text" class="form-control mb-2 mr-sm-2" placeholder="High" id="temp2">
+               </form>
+              </div>
+
+             <br>
+             <br>
+             <button type="submit" class="btn btn-primary mb-2">Find a plant for me!</button>
+             <br>
+             <br>
+
+          </div>
+
+
+      </body>
+    </html>
