@@ -1,148 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>Botanizer Search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Botanizer Search</title>
 	<link rel="icon" href="../Resources/Images/plantIcon.png">
-    <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link href="../Resources/CSS/my_style.css" rel="stylesheet">
-  </head>
-
+</head>
 <body>
-    <!-- Top Nav Bar/Menu -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="./Search.html">
-            <img class="img-fluid" src="../Resources/Images/plantIcon.png" alt="" width="30px">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./Search.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./Survey.html">Find My Plant Survey</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./FAQ.html">Plant Care FAQ</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Top Nav Bar/Menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="./Search.html">
+          <img class="img-fluid" src="../Resources/Images/plantIcon.png" alt="" width="30px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="./Search.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./Survey.html">Find My Plant Survey</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./FAQ.html">Plant Care FAQ</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
 
-    <!-- Title with search bar at the top of the page -->
-    <div class="container">
-        <div class="jumbotron jumbotron-fluid text-center">
-            <h1>Botanizer Search</h1>
-            <h5 class="text-center">Filters</h5>
-            <form>
-                <div class="form-group row">
-                    <div class="col-sm-6 text-right">Lighting:</div>
-                    <div class="col-sm-6 text-left">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="lightingFiltersDarkID" value="Dark">
-                            <label class="form-check-label" for="lightingFiltersDarkID">Dark</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="lightingFiltersDimID" value="Dim">
-                            <label class="form-check-label" for="lightintFiltersDimID">Dim</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="lightingFiltersBrightID" value="Bright">
-                            <label class="form-check-label" for="lightintFiltersBrightID">Bright</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="lightingFiltersDirectSunID" value="DirectSun">
-                            <label class="form-check-label" for="lightintFiltersDirectSunID">Direct Sunlight</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 text-right">Soil Moisture:</div>
-                    <div class="col-sm-6 text-left">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="soilMoistureDryID" value="Dry">
-                            <label class="form-check-label" for="soilMoistureDryID">Dry</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="soilMoistureDampID" value="Damp">
-                            <label class="form-check-label" for="soilMoistureDampID">Damp</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="soilMoistureFloodedID" value="Flooded">
-                            <label class="form-check-label" for="soilMoistureFloodedID">Flooded</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 text-right">Care Difficulty:</div>
-                    <div class="col-sm-6 text-left">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="difficultyEasyID" value="Easy">
-                            <label class="form-check-label" for="difficultyEasyID">Easy</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="difficultyMediumID" value="Medium">
-                            <label class="form-check-label" for="difficultyMediumID">Medium</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="difficultyHardID" value="Hard">
-                            <label class="form-check-label" for="difficultyHardID">Hard</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 text-right">Temperature (F):</div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-control-sm" id="lowTemperatureInputID" placeholder="Low">
-                    </div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-control-sm" id="highTemperatureInputID" placeholder="High">
-                    </div>
-                    <div class="col-sm-4">
-                        <!-- Filler column for spacing -->
-                    </div>
-                    <div class="col-sm-6 text-right">Relative Humidity (%):</div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-control-sm" id="lowHumidityInputID" placeholder="Low">
-                    </div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-control-sm" id="highHumidityInputID" placeholder="High">
-                    </div>
-                    <div class="col-sm-4">
-                        <!-- Filler column for spacing -->
-                    </div>
-                </div>
-                <div class="form-row form-fluid">
-                    <div class="col-md-3">
-                        <!-- Filler column to center the search bar -->
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="searchInputID" placeholder="Plant Name">
-                    </div>
-                    <div class="col-md-1">
-                        <button type="submit" class="btn btn-success" onclick="populateResults('resultsTableBodyID')">Search</button>
-                    </div>
-                    <div class="col-md-3">
-                        <!-- Filler column to center the search bar -->
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+  <!-- Title with search bar at the top of the page -->
+  <div class="container">
+      <div class="jumbotron jumbotron-fluid text-center">
+          <h1>Botanizer Search</h1>
+          <h5 class="text-center">Filters</h5>
+          <form>
+              <div class="form-group row">
+                  <div class="col-sm-6 text-right">Lighting:</div>
+                  <div class="col-sm-6 text-left">
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="lightingFiltersDarkID" value="Dark">
+                          <label class="form-check-label" for="lightingFiltersDarkID">Dark</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="lightingFiltersDimID" value="Dim">
+                          <label class="form-check-label" for="lightintFiltersDimID">Dim</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="lightingFiltersBrightID" value="Bright">
+                          <label class="form-check-label" for="lightintFiltersBrightID">Bright</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="lightingFiltersDirectSunID" value="DirectSun">
+                          <label class="form-check-label" for="lightintFiltersDirectSunID">Direct Sunlight</label>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 text-right">Soil Moisture:</div>
+                  <div class="col-sm-6 text-left">
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="soilMoistureDryID" value="Dry">
+                          <label class="form-check-label" for="soilMoistureDryID">Dry</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="soilMoistureDampID" value="Damp">
+                          <label class="form-check-label" for="soilMoistureDampID">Damp</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="soilMoistureFloodedID" value="Flooded">
+                          <label class="form-check-label" for="soilMoistureFloodedID">Flooded</label>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 text-right">Care Difficulty:</div>
+                  <div class="col-sm-6 text-left">
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="difficultyEasyID" value="Easy">
+                          <label class="form-check-label" for="difficultyEasyID">Easy</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="difficultyMediumID" value="Medium">
+                          <label class="form-check-label" for="difficultyMediumID">Medium</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="difficultyHardID" value="Hard">
+                          <label class="form-check-label" for="difficultyHardID">Hard</label>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 text-right">Temperature (F):</div>
+                  <div class="col-sm-1">
+                      <input type="text" class="form-control form-control-sm" id="lowTemperatureInputID" placeholder="Low">
+                  </div>
+                  <div class="col-sm-1">
+                      <input type="text" class="form-control form-control-sm" id="highTemperatureInputID" placeholder="High">
+                  </div>
+                  <div class="col-sm-4">
+                      <!-- Filler column for spacing -->
+                  </div>
+                  <div class="col-sm-6 text-right">Relative Humidity (%):</div>
+                  <div class="col-sm-1">
+                      <input type="text" class="form-control form-control-sm" id="lowHumidityInputID" placeholder="Low">
+                  </div>
+                  <div class="col-sm-1">
+                      <input type="text" class="form-control form-control-sm" id="highHumidityInputID" placeholder="High">
+                  </div>
+                  <div class="col-sm-4">
+                      <!-- Filler column for spacing -->
+                  </div>
+              </div>
+              <div class="form-row form-fluid">
+                  <div class="col-md-3">
+                      <!-- Filler column to center the search bar -->
+                  </div>
+                  <div class="col-md-5">
+                      <input type="text" class="form-control" id="searchInputID" placeholder="Plant Name">
+                  </div>
+                  <div class="col-md-1">
+                      <button type="submit" class="btn btn-success" onclick="populateResults('resultsTableBodyID')">Search</button>
+                  </div>
+                  <div class="col-md-3">
+                      <!-- Filler column to center the search bar -->
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
 
-    <!-- Hidden table for results (Unhidden when a valid search occurs) -->
-    <div class="container">
-        <table class="table table-light" id="resultsTableID">    <!-- d-none class makes table not display, toggle to d-block to dislpay -->
-            <thead>
-                <tr>
-                    <th>Results</th>
-                </tr>
-            </thead>
-            <tbody id="resultsTableBodyID">
-                <!-- Gets filled by results from JavaScript function -->
-            </tbody>
-        </table>
-    </div>
+  <!-- Hidden table for results (Unhidden when a valid search occurs) -->
+  <div class="container">
+      <table class="table table-light" id="resultsTableID">    <!-- d-none class makes table not display, toggle to d-block to dislpay -->
+          <thead>
+              <tr>
+                  <th>Results</th>
+              </tr>
+          </thead>
+          <tbody id="resultsTableBodyID">
+              <!-- Gets filled by results from JavaScript function -->
+          </tbody>
+      </table>
+  </div>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
