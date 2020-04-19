@@ -1,0 +1,129 @@
+<% include ../partials/header %>
+<% include ../partials/menu %>
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="col-4">
+				<div class="card">
+				<%
+					var image_src = '../resources/img/helmet.jpg';
+					if(playerStatsData)
+					{
+						// If a player has been selected, use their picture instead
+						image_src = playerStatsData.img_src;
+					}
+				  %>
+				 <img class="card-img-top" id="player_img" src= "<%- image_src %>" alt="Image of Football Player">
+				  <div class="card-body mx-auto">
+					<form class="form" action="/player_info/select_player" method="get">
+						<select class="custom-select" name="player_choice" onchange="this.form.submit()">
+							<option>Select Player</option>
+							<%
+							if(playerData)
+							{
+							    var options = '';
+									playerData.forEach(function(item)
+									{
+										if(item.id == playerStatsData.id)
+										{
+											// If the player is the selected player, make their name visible on select menu
+											options += '<option selected value="' + item.id + '">' + item.name + '</option>';
+										}
+										else
+										{
+											// Otherwise add them as an option
+											options += '<option value="' + item.id + '">' + item.name + '</option>';
+										}
+							  	}); %>
+							  	<%- options %>
+						<%} %>
+						</select>
+					</form>
+				  </div>
+				</div>
+			</div>
+			<div class="col-8">
+				<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<th>Year</th>
+							<td>
+								<%
+								var year = '';
+								if(playerStatsData)
+								{
+									year = playerStatsData.year;
+								}%>
+								<%- year %>
+							</td>
+						</tr>
+						<tr>
+							<th>Major</th>
+							<td>
+								<%
+								var major = '';
+								if(playerStatsData)
+								{
+									major = playerStatsData.major;
+								}%>
+								<%- major %>
+							</td>
+						</tr>
+						<tr>
+							<th>Games Played</th>
+							<td>
+								<%
+								var gamesPlayed = '';
+								if(gamesPlayedData)
+								{
+									gamesPlayed = gamesPlayedData;
+								}%>
+								<%- gamesPlayed %>
+							</td>
+						</tr>
+						<tr>
+							<td>Passing Yards: <%
+								var passingYards = '';
+								var avgPassingYards = '';
+								if(playerStatsData && gamesPlayedData)
+								{
+									passingYards = playerStatsData.passing_yards;
+									avgPassingYards = playerStatsData.passing_yards / gamesPlayedData;
+								}%>
+								<%- passingYards %>
+							</td>
+							<td>Avg. Passing Yards: <%- avgPassingYards %></td>
+						</tr>
+						<tr>
+							<td>Rushing Yards: <%
+								var rushingYards = '';
+								var avgRushingYards = '';
+								if(playerStatsData && gamesPlayedData)
+								{
+									rushingYards = playerStatsData.rushing_yards;
+									avgRushingYards = playerStatsData.rushing_yards / gamesPlayedData;
+								}%>
+								<%- rushingYards %>
+							</td>
+							<td>Avg. Rushing Yards: <%- avgRushingYards %></td>
+						</tr>
+						<tr>
+							<td>Receiving Yards: <%
+								var receivingYards = '';
+								var avgReceivingYards = '';
+								if(playerStatsData && gamesPlayedData)
+								{
+									receivingYards = playerStatsData.receiving_yards;
+									avgReceivingYards = playerStatsData.receiving_yards / gamesPlayedData;
+								}%>
+								<%- receivingYards %>
+							</td>
+							<td>Avg. Receiving Yards: <%- avgReceivingYards %></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<% include ../partials/footer %>

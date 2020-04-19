@@ -1,0 +1,104 @@
+<% include ../partials/header %>
+	
+	<img src="../resources/img/beproudcapaabanner.jpg" class="img-fluid" alt="Registration Page Banner for CU Football">
+    <br>
+	<br>
+	<div class="container">
+		<form action="home">
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label" for="fullName">Full Name</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="fullName" id="fullName"  placeholder="Enter Name">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label"  for="emailAddress">Email address</label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter email">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label  class="col-sm-2 col-form-label" for="passwordFirst">Password</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="passwordFirst" name="passwordFirst" placeholder="Password">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label  class="col-sm-2 col-form-label" for="passwordConfirm">Confirm Password</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password">
+				</div>
+			</div>
+			 <fieldset class="form-group">
+				<div class="row">
+				  <legend class="col-form-label col-sm-2 pt-0">CU Boulder Alumni</legend>
+				  <div class="col-sm-10">
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="alumniStatus" id="alumniStatusYes" value="Yes" required>
+					  <label class="form-check-label" for="alumniStatusYes">
+						Yes
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="alumniStatus" id="alumniStatusNo" value="No">
+					  <label class="form-check-label" for="alumniStatusNo">
+						No
+					  </label>
+					</div>
+				  </div>
+				</div>
+			  </fieldset>
+			<fieldset class="form-group">
+				<div class="row">
+				  <legend class="col-form-label col-sm-2 pt-0">CU Boulder Student</legend>
+				  <div class="col-sm-10">
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewStudentStats('student_status', 1)" type="radio" name="studentStatus" id="studentStatusYes" value="Yes" required>
+					  <label class="form-check-label" for="studentStatusYes">
+						Yes
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewStudentStats('student_status', 0);viewStudentStats('undergrad_select', 0);viewStudentStats('grad_select', 0);" type="radio" name="studentStatus" id="studentStatusNo" value="No">
+					  <label class="form-check-label" for="studentStatusNo">
+						No
+					  </label>
+					</div>
+				  </div>
+				</div>
+				<div class="row" id="student_status">
+				  <legend class="col-form-label col-sm-2 pt-0">Student Status</legend>
+				  <div class="col-sm-10">
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewStudentStats('undergrad_select', 1);viewStudentStats('grad_select', 0);" type="radio" name="student_type" id="undergrad" value="U">
+					  <label class="form-check-label" for="undergrad">
+						Undergrad
+					  </label>
+					</div>
+					<select name="undergrad_level" id="undergrad_select" class="custom-select custom-select-sm">
+					  <option selected>Select Student Status</option>
+					  <option value="1">Freshman</option>
+					  <option value="2">Sophomore</option>
+					  <option value="3">Junior</option>
+					  <option value="4">Senior</option>
+					</select>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewStudentStats('undergrad_select', 0);viewStudentStats('grad_select', 1);" type="radio" name="student_type" id="graduate" value="G">
+					  <label class="form-check-label" for="graduate">
+						Grad
+					  </label>
+					</div>
+					<select name="grad_level" id="grad_select" class="custom-select custom-select-sm">
+					  <option selected>Select Student Status</option>
+					  <option value="1">Masters</option>
+					  <option value="2">MBA</option>
+					  <option value="3">PhD</option>
+					</select>
+				  </div>
+				</div>
+			  </fieldset>
+			<input type="submit" value="submit" class="btn btn-primary btn-block">
+		</form>
+		<br>
+	</div>
+<% include ../partials/footer %>

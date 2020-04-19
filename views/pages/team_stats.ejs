@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+<% include ../partials/menu %>
+	<div class="container">
+		<br>
+		<div class="jumbotron">
+		  <h1 class="display-4">Fall 2018 Stats</h1>
+		  <p class="lead">Detailed information on how the Buffs are doing in the 2018 Football Season!</p>
+		</div>
+
+		<table class="table table-bordered" id="stats_table">
+			<tr>
+				<th class="align-bottom" rowspan="2">Game Date</th>
+				<th class="align-bottom"rowspan="2">Opposing Team Name</th>
+				<th class="text-center" colspan="2">Score</th>
+				<th class="align-bottom" rowspan="2">Winner</th>
+			</tr>
+			<tr>
+				<th>Home Score</th>
+				<th>Opp. Score</th>
+			</tr>
+			<%
+			if(footballGamesData)
+			{
+					var rows = '';
+					footballGamesData.forEach(function(item)
+					{
+						if(item.home_score > item.visitor_score)
+						{
+							// If CU won, make CU Boulder the winner column
+							rows += '<tr><td class="text-center">' + item.game_date + '</td>' +
+											'<td class="text-center">' + item.visitor_name + '</td>' +
+											'<td class="text-center">' + item.home_score + '</td>' +
+											'<td class="text-center">' + item.visitor_score + '</td>' +
+											'<td class="text-center">CU Boulder</td>';
+						}
+						else
+						{
+							// If CU lost, make the visitor the winner column
+							rows += '<tr><td class="text-center">' + item.game_date + '</td>' +
+											'<td class="text-center">' + item.visitor_name + '</td>' +
+											'<td class="text-center">' + item.home_score + '</td>' +
+											'<td class="text-center">' + item.visitor_score + '</td>' +
+											'<td class="text-center">' + item.visitor_name + '</td>';
+						}
+					}); %>
+					<%- rows %>
+		<%} %>
+		</table>
+		<br>
+		<table class="table text-center">
+			<tr>
+				<th>Wins</th>
+				<th>Losses</th>
+			</tr>
+			<tr>
+				<td>
+					<%
+					var wins = winCountData;
+					%>
+					<%- wins %>
+				</td>
+				<td>
+					<%
+					var losses = lossCountData;
+					%>
+					<%- losses %>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+<% include ../partials/footer %>

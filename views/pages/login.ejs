@@ -1,0 +1,46 @@
+<% include ../partials/header %>
+	
+   
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+
+    </style>
+    <form class="form-signin">
+	  <img class="rounded-circle" src="../resources/img/cu_boulder_logo.jpg" alt="" width="72" height="72">
+	  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+	  <label for="inputEmail" class="sr-only">Email address</label>
+	  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+	  <label for="inputPassword" class="sr-only">Password</label>
+	  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+	  <div class="checkbox mb-3">
+		<label>
+		  <input type="checkbox" value="remember-me"> Remember me | 
+		</label>
+			<a href="">Forgot Password?</a>
+	  </div>
+	  <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+	  <a class="btn btn-lg btn-primary" href="register">Register</a>
+	  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+	</form>
+	<!-- Because we now use partials for our header, we can't directly add Boostrap Classes to our Body tag.
+		 Below is a "work-around" to apply the Bootstrap classes when the page loads
+	 -->
+	<script type="text/javascript">
+        function addCSSToBody() {
+            document.body.classlist.add("center");
+            document.body.classlist.add("text-center");
+        }
+        window.onload = addCSSToBody;
+
+	</script>
+<% include ../partials/footer %>

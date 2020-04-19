@@ -1,0 +1,75 @@
+<% include ../partials/header %>
+<% include ../partials/menu %>
+	<div class="container">
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-4">
+				<img class="rounded img-fluid" src="../resources/img/helmet.jpg" alt="CU Boulder Football Helmet">
+			</div>
+			<div class="col-8">
+				<div class="jumbotron">
+				  <h1 class="display-4">Welcome to CU Boulder's Football Home Page!</h1>
+				  <p class="lead">If you are interested in learning about the best collegiate football team in the Rockies, then you've come to the right place.
+									Here you'll find the scores for the latest football season and the most up-to-date stats on our football players.  To find out more information
+									about Ralphie and the Buff Football Team, head over <a href="https://cubuffs.com/" >here</a></p>
+					<hr>
+				  <p> Source for Image: <a href="https://www.cubookstore.com/p-80451-colorado-buffaloes-mini-speed-football-helmet.aspx">CU Bookstore</a> </p>
+					<hr>
+					<p> Color Message:
+							<% if(color)
+							{%>
+								<%- color_msg %>
+								<% var script_text = '<script>document.body.style.backgroundColor = "#' + color + '";</script>'; %>
+								<%- script_text %>
+						 <% }%>
+					</p>
+
+					<form action="/home/pick_color" method="post">
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label" for="color_hex">Color Hex Value:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="color_hex" id="color_hex"  placeholder="Enter Hex Value" maxlength="6">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label"  for="color_name">Color Name:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="color_name" id="color_name" placeholder="Enter Color's Name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label  class="col-sm-2 col-form-label" for="color_message">Color Message:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="color_message" name="color_message" placeholder="Enter the Color's Description">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary btn-block">Submit</button>
+					</form>
+
+					<form action="/home/pick_color" method="get">
+						<%
+						if(data)
+						{
+						    var buttons = '';
+								data.forEach(function(item)
+								{
+							  		 buttons += '<button type="submit" name="color_selection" class="btn btn-block" style="background-color:#' + item.hex_value + '" value="' + item.hex_value + '">';
+										 if(item.name)
+										 {
+									       buttons += item.name + '</button>';
+									   }
+									   else
+										 {
+									    	 buttons += item.hex_value + '</button>';
+									   }
+						  	}); %>
+						  	 <%- buttons %>
+					<%} %>
+				  </form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<% include ../partials/footer %>
