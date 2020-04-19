@@ -1,4 +1,6 @@
--- do not run this file directly, import the dump file
+-- import the dump file, or you could just run the scripts in this file
+DROP TABLE IF EXISTS plantDatabase;
+
 CREATE TABLE IF NOT EXISTS plantDatabase(
     id INT PRIMARY KEY,
     name VARCHAR NOT NULL,
@@ -21,5 +23,8 @@ INSERT INTO plantDatabase(id, name, lighting, soil_moisture, temp_low, temp_high
             (7, 'Hibiscus, Rose of Sharon, Shrub Althea', 4, 2, -20, 40, 2, 2, '../Resources/Images/hibiscus.jpg'),
             (8, 'Sansevieria Species, Mother-in-Laws Tongue, Saint Georges Sword, Snake Plant', 2, 1, 30, 40, 3, 1, '../Resources/Images/snake_plant.jpg'),
             (9, 'Cenchrus, Purple Fountain Grass, Rose Fountain Grass Rubrum', 3, 2, 20, 40, 3, 1, '../Resources/Images/purple_grass.jpg'),
-            (10, 'Piper Species, Hoja Santa, Mexican Pepperleaf, Root Beer Plant', 1, 3, 10, 40, 1, 1, '../Resources/Images/root_beer.jpg');
+            (10, 'Piper Species, Hoja Santa, Mexican Pepperleaf, Root Beer Plant', 1, 3, 10, 40, 1, 1, '../Resources/Images/root_beer.jpg'),
+            (11, 'Habanero Pepper Carribean Red', 3, 2, -30, 30, 1, 3, '../Resources/Images/carribean_red.jpg'),
+            (12, 'Habanero Pepper Orange Habanero', 4, 2, -30, 30, 1, 2, '../Resources/Images/orange_habanero.jpg'),
+            (13, 'Habanero Pepper White Habanero', 4, 2, -40, 30, 1, 3, '../Resources/Images/white_habanero.jpg');
 -- need to use 'psql botanizer < plantdb.sql' command to restore dump file, where the database is named botanizer
