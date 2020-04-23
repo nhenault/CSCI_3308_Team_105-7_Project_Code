@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Botanizer</title>
+	<link rel="icon" href="../Resources/Images/plantIcon.png">
+  <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../Resources/CSS/my_style.css" rel="stylesheet">
+  <style>
+    #jumbo{
+      background-image: url('https://image.freepik.com/free-vector/summer-flowers-leaves-watercolor-horizontal-background-seasonal-plants-multicolored-foliage-blooming-wildflowers-grass_71593-355.jpg');
+    }
+    #login {
+      display: grid;
+      grid-template-columns: 35% 40% 25%;
+      max-width: 960px;
+      padding: 20px;
+    }
+    #button {
+      display: grid;
+      grid-template-columns: 36% 20% 43%;
+      max-width: 960px;
+      max-height: 15px;
+      grid-row-gap: 10px;
+    }
+    .bg-modal {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      position: fixed;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      display: none;
+    }
+    .modal-content {
+      width: 500px;
+      height: 300px;
+      background-color: white;
+      border: solid;
+      border-width: 2px;
+      text-align: center;
+      position: relative;
+    }
+    input {
+      width: 50%;
+      display: block;
+      margin: 15px auto;
+    }
+    .close{
+      position: absolute;
+      top: 0;
+      right: 14px;
+      font-size: 30px;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Title with search bar at the top of the page -->
+  <div class="container">
+      <div class="jumbotron jumbotron-fluid text-center" id="jumbo">
+          <h1>Botanizer</h1>
+          <br>
+          <br>
+      </div>
+      <div>
+            <div id="login" class="form-fluid">
+              <div>
+                  <!-- Filler column to center text -->
+              </div>
+              <h4>Please sign in</h4>
+              <div>
+                  <!-- Filler column to center text -->
+              </div>
+              <div>
+                  <!-- Filler column to center the email input -->
+              </div>
+              <div>
+                  <input type="text" style="width:100%" class="form-control" id="emailID" placeholder="Email">
+              </div>
+              <div>
+                  <!-- Filler column to center the email input -->
+              </div>
+              <div>
+                  <!-- Filler column to center the password input -->
+              </div>
+              <div>
+                  <input type="text" style="width:100%" class="form-control" id="passwordID" placeholder="Password">
+              </div>
+              <div>
+                  <!-- Filler column to center the password input -->
+              </div>
+            </div>
+
+            <div id="button" class="form-row form-fluid">
+                <div>
+                    <!-- Filler column to center the login button -->
+                </div>
+                <div>
+                    <button type="submit" style="width:90%;" class="btn btn-success" id="login">Login</button>
+                </div>
+                <div>
+                    <!-- Filler column to center the login button -->
+                </div>
+                <div>
+                    <!-- Filler column to center the register button -->
+                </div>
+                <div>
+                    <button type="submit" style="width:90%;" class="btn btn-success" id="register" >Register</button>
+                </div>
+                <div>
+                    <!-- Filler column to center the registter button -->
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Register Modal -->
+      <div class="bg-modal">
+        <div class="modal-content">
+          <div class="close">+</div>
+          <img src="../Resources/Images/plantIcon.png" alt="" width="60px">
+          <h3>User Registration</h3>
+          <form>
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Password">
+            <button type="submit" style="width:45%" class="btn btn-success" >Register</button>
+          </form>
+        </div>
+      </div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="../Resources/JavaScript/landingPageScript.js"></script>
+</body>
+</html>
