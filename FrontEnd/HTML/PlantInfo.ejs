@@ -46,7 +46,7 @@
           }
         %>
 
-        <img class="pimg rounded" style="float:left; margin-left:50px; margin-top:50px; border: solid;" width="500" height="500" id="plant_img" src= "<%- image_src %>" alt="Image of Selected Plant">
+        <img class="pimg rounded" style="float:left; margin-left:50px; margin-top:50px; border: solid;" width="500" height="500" src="<%- image_src %>">
         <!-- Plant name -->
         <div class="jumbotron jumbotron-fluid bg-success text-white">
           <div class="container">
@@ -56,9 +56,8 @@
         <table class="table" style="max-width:500px; margin-right:auto; margin-left:auto; border:5px double black;">
           <thead>
               <tr>
-                <!-- Populate table, checking for each variable -->
-                <td scope="col">Water Level:</td>
-                <td scope="col">
+                <td scope="col" class="text-info">Water Level:</td>
+                <td scope="col" class="text-info">
                   <%
                   var water = '';
                   if(plantCareInfo)
@@ -72,8 +71,8 @@
             </thead>
             <tbody>
               <tr>
-                <td scope="row">Light Level:</td>
-                <td>
+                <td scope="row" class="text-info">Light Level:</td>
+                <td class="text-info">
                   <%
                   var light = '';
                   if(plantCareInfo)
@@ -85,8 +84,8 @@
                 </td>
               </tr>
               <tr>
-                <td scope="row">Temperature:</td>
-                <td>
+                <td scope="row" class="text-info">Temperature:</td>
+                <td class="text-info">
                   <%
                   var tempLow = '';
                   var tempHigh = '';
@@ -100,8 +99,8 @@
                 </td>
               </tr>
               <tr>
-                <td scope="row">Soil Moisture:</td>
-                <td>
+                <td scope="row" class="text-info">Soil Moisture:</td>
+                <td class="text-info">
                   <%
                   var soil = '';
                   if(plantCareInfo)
@@ -117,7 +116,7 @@
       </div>
       <div class="container">
         <h1 style="margin-top:140px; margin-left:50px;">Difficulty</h1>
-        <font size= "+2" style="margin-top:140px; margin-left:50px;">
+        <font size= "+2" style="margin-top:140px; margin-left:50px;" class="text-info">
           <%
           var difficulty = '';
           if(plantCareInfo)
@@ -130,7 +129,7 @@
       </div>
     </container>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<script src="../Resources/JavaScript/scripts.js"></script>
