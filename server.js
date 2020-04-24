@@ -46,9 +46,8 @@ app.get('/Search', function(req, res)
   var humidityLow = req.query.humidityLow;
   var humidityHigh = req.query.humidityHigh;
   var plantName = req.query.name;
-  
-  var plantResult = 'SELECT * FROM plantDatabase WHERE name = ' + plantName + ' AND soil_moisture = ' + moisture + ' AND
-  temp_low >= ' + tempLow + ' AND temp_high <= ' + tempHigh + ' ;';
+
+  var plantResult = 'SELECT * FROM plantDatabase WHERE name = ' + plantName + ' AND soil_moisture = ' + moisture + ' AND temp_low >= ' + tempLow + ' AND temp_high <= ' + tempHigh + ' ;';
 
   db.any(plantResult)
     .then(info =>
@@ -66,25 +65,25 @@ app.get('/Search', function(req, res)
       {
         plantResultInfo: ''
       })
-    })
+    });
+});
 
-  
+
 // Login page Render
 // Occurs after url is entered
 app.get('/login', function(req, res){
    res.render('landing_page.ejs')
-})
+});
 
 // Post request to check if the info provided matches a user in the database
-app.post('/login', urlencodedParser, function(req, res){
+app.post('/login', function(req, res){
   try{
-
     res.redirect('pages/Search')
   }
   catch{
    res.redirect('/login')
   }
-})
+});
 
 // Post request that adds the new  user to the database
 app.post('/register', async function(req, res){
@@ -100,7 +99,7 @@ app.post('/register', async function(req, res){
    catch{
     res.redirect('/register')
    }
-})
+});
 
 
 // Plant info Render
@@ -126,8 +125,8 @@ app.get('/PlantInfo', function(req, res)
       {
         plantCareInfo: ''
       })
-    })
-})
+    });
+});
 
 // Open up the server port to allow rendering
 app.listen(3000);
