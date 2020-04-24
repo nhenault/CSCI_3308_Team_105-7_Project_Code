@@ -71,7 +71,7 @@
           <br>
           <br>
       </div>
-      <div>
+        <form action="/login" method="POST">
             <div id="login" class="form-fluid">
               <div>
                   <!-- Filler column to center text -->
@@ -84,7 +84,7 @@
                   <!-- Filler column to center the email input -->
               </div>
               <div>
-                  <input type="text" style="width:100%" class="form-control" id="emailID" placeholder="Email">
+                  <input type="email" style="width:100%" class="form-control" id="emailID" name="emailID" placeholder="Email" required>
               </div>
               <div>
                   <!-- Filler column to center the email input -->
@@ -93,7 +93,7 @@
                   <!-- Filler column to center the password input -->
               </div>
               <div>
-                  <input type="text" style="width:100%" class="form-control" id="passwordID" placeholder="Password">
+                  <input type="password" style="width:100%" class="form-control" id="passwordID" name="passwordID" placeholder="Password" required>
               </div>
               <div>
                   <!-- Filler column to center the password input -->
@@ -114,13 +114,13 @@
                     <!-- Filler column to center the register button -->
                 </div>
                 <div>
-                    <button type="submit" style="width:90%;" class="btn btn-success" id="register" >Register</button>
+                    <button type="submit" style="width:90%;" class="btn btn-success" id="registerModal">Register</button>
                 </div>
                 <div>
                     <!-- Filler column to center the registter button -->
                 </div>
               </div>
-          </div>
+            </form>
       </div>
 
       <!-- Register Modal -->
@@ -129,10 +129,10 @@
           <div class="close">+</div>
           <img src="../Resources/Images/plantIcon.png" alt="" width="60px">
           <h3>User Registration</h3>
-          <form>
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Password">
-            <button type="submit" style="width:45%" class="btn btn-success" >Register</button>
+          <form action="/register" method="POST">
+            <input type="eamil" id="emailID" name="emailID" placeholder="Email" required>
+            <input type="password" id="passwordID" name="passwordID" placeholder="Password" required>
+            <button type="submit" style="width:45%" class="btn btn-success">Register</button>
           </form>
         </div>
       </div>

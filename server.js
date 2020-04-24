@@ -36,7 +36,6 @@ var db = pgp(dbConfig);
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
 
-
 app.get('/Search', function(req, res)
 {
   var plantLight = req.query.lighting;
@@ -68,6 +67,39 @@ app.get('/Search', function(req, res)
         plantResultInfo: ''
       })
     })
+
+  
+// Login page Render
+// Occurs after url is entered
+app.get('/login', function(req, res){
+   res.render('landing_page.ejs')
+})
+
+// Post request to check if the info provided matches a user in the database
+app.post('/login', urlencodedParser, function(req, res){
+  try{
+
+    res.redirect('pages/Search')
+  }
+  catch{
+   res.redirect('/login')
+  }
+})
+
+// Post request that adds the new  user to the database
+app.post('/register', async function(req, res){
+   try{
+     const hashedPassword = await bcrypt.hash(req.body.passwordID, 10)
+     users.push({
+       id: Date.now().toString(),
+       email: req.body.emailID,
+       password: req.body.passwordID
+     })
+     res.redirect('/login')
+   }
+   catch{
+    res.redirect('/register')
+   }
 })
 
 
