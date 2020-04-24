@@ -42,7 +42,7 @@
       <div class="jumbotron jumbotron-fluid text-center" class="text-info">
           <h1 class="text-success">Botanizer Search</h1>
           <h5 class="text-center">Filters</h5>
-          <form>
+          <form class="form" action="/Search" method="get">
               <div class="form-group row">
                   <div class="col-sm-6 text-right">Lighting:</div>
                   <div class="col-sm-6 text-left">
@@ -119,10 +119,10 @@
                       <!-- Filler column to center the search bar -->
                   </div>
                   <div class="col-md-5">
-                      <input type="text" class="form-control" id="searchInputID" placeholder="Plant Name">
+                      <input type="text" name="plant_choice" class="form-control" id="searchInputID" placeholder="Plant Name">
                   </div>
                   <div class="col-md-1">
-                      <button action="/Search" type="submit" class="btn btn-success" onclick="populateResults('resultsTableBodyID')">Search</button>
+                      <button type="submit" class="btn btn-success" onclick="this.form.submit()">Search</button>
                   </div>
                   <div class="col-md-3">
                       <!-- Filler column to center the search bar -->

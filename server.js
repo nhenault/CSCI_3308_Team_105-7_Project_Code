@@ -61,7 +61,7 @@ app.get('/Search', function(req, res)
     {
       // Display error message if an error occurs
       console.log('error', err);
-      response.render('pages/PlantInfo',
+      response.render('pages/Search',
       {
         plantResultInfo: ''
       })
@@ -78,7 +78,7 @@ app.get('/login', function(req, res){
 // Post request to check if the info provided matches a user in the database
 app.post('/login', function(req, res){
   try{
-    res.redirect('pages/Search')
+    res.redirect('/Search')
   }
   catch{
    res.redirect('/login')
