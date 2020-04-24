@@ -119,7 +119,7 @@
                       <input type="text" class="form-control" id="searchInputID" placeholder="Plant Name">
                   </div>
                   <div class="col-md-1">
-                      <button type="submit" class="btn btn-success" onclick="populateResults('resultsTableBodyID')">Search</button>
+                      <button action="/Search" type="submit" class="btn btn-success" onclick="populateResults('resultsTableBodyID')">Search</button>
                   </div>
                   <div class="col-md-3">
                       <!-- Filler column to center the search bar -->
@@ -139,6 +139,17 @@
           </thead>
           <tbody id="resultsTableBodyID">
               <!-- Gets filled by results from JavaScript function -->
+              <%
+		if(plantResultInfo)
+		{
+			var results = '';
+			plantResultInfo.forEach(function(item)
+			{
+				results += '<li class="list-group-item"> <a class="nav-link" href="plant_choice=' + item.id + '"> ' + item.name + ' </a></li>';
+
+			}); %>
+			<%- results %>
+		<%} %>
           </tbody>
       </table>
   </div>

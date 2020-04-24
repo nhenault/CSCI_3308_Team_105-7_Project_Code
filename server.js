@@ -36,6 +36,39 @@ var db = pgp(dbConfig);
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
 
+app.get('/Search', function(req, res)
+{
+  var plantLight = req.query.lighting;
+  var moisture = req.query.moisture;
+  var diff = req.query.difficulty;
+  var tempLow = req.query.tempLow;
+  var tempHigh = req.query.tempHigh;
+  var humidityLow = req.query.humidityLow;
+  var humidityHigh = req.query.humidityHigh;
+  var plantName = req.query.name;
+  
+  var plantResult = 'SELECT * FROM plantDatabase WHERE name = ' + plantName + ' AND soil_moisture = ' + moisture + ' AND
+  temp_low >= ' + tempLow + ' AND temp_high <= ' + tempHigh + ' ;';
+
+  db.any(plantResult)
+    .then(info =>
+    {
+      res.render('pages/Search',
+      {
+        plantResultInfo: search
+      })
+    })
+    .catch(err =>
+    {
+      // Display error message if an error occurs
+      console.log('error', err);
+      response.render('pages/PlantInfo',
+      {
+        plantResultInfo: ''
+      })
+    })
+
+  
 // Login page Render
 // Occurs after url is entered
 app.get('/login', function(req, res){
