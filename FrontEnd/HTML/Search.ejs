@@ -139,6 +139,17 @@
           </thead>
           <tbody id="resultsTableBodyID">
               <!-- Gets filled by results from JavaScript function -->
+              <%
+		if(plantResultInfo)
+		{
+			var results = '';
+			plantResultInfo.forEach(function(item)
+			{
+				results += '<li class="list-group-item"> <a class="nav-link" href="plant_choice=' + item.id + '"> ' + item.name + ' </a></li>';
+
+			}); %>
+			<%- results %>
+		<%} %>
           </tbody>
       </table>
   </div>
