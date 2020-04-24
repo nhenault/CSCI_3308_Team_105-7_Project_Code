@@ -72,7 +72,7 @@ app.get('/Search', function(req, res)
 // Login page Render
 // Occurs after url is entered
 app.get('/login', function(req, res){
-   res.render('landing_page.ejs')
+   res.render('pages/landing_page.ejs')
 });
 
 // Post request to check if the info provided matches a user in the database
