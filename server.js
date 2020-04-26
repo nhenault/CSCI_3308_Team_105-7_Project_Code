@@ -72,7 +72,7 @@ app.get('/Search', function(req, res)
 // Login page Render
 // Occurs after url is entered
 app.get('/login', function(req, res){
-   res.render('pages/landing_page.ejs')
+   res.render('pages/landing_page')
 });
 
 // Post request to check if the info provided matches a user in the database
@@ -126,6 +126,11 @@ app.get('/PlantInfo', function(req, res)
         plantCareInfo: ''
       })
     });
+});
+
+//FAQ render
+app.get('/faq', function(req, res){
+   res.render('pages/FAQ');
 });
 
 // Open up the server port to allow rendering
