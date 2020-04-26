@@ -78,7 +78,7 @@ app.get('/login', function(req, res){
 // Post request to check if the info provided matches a user in the database
 app.post('/login', function(req, res){
   try{
-    res.redirect('/Search')
+    res.redirect('/searchpage')
   }
   catch{
    res.redirect('/login')
@@ -128,9 +128,29 @@ app.get('/PlantInfo', function(req, res)
     });
 });
 
+// home page render
+app.get('/', function(req, res){
+   res.render('pages/landing_page');
+});
+
 //FAQ render
 app.get('/faq', function(req, res){
    res.render('pages/FAQ');
+});
+
+//survey render
+app.get('/survey', function(req, res){
+   res.render('pages/Survey');
+});
+
+//Map render
+app.get('/map', function(req, res){
+   res.render('pages/plant_map');
+});
+
+// Search page render
+app.get('/searchpage', function(req, res){
+   res.render('pages/Search');
 });
 
 // Open up the server port to allow rendering
