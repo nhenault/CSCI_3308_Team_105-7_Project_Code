@@ -142,7 +142,8 @@
           </thead>
           <tbody id="resultsTableBodyID">
               <!-- Gets filled by results from JavaScript function -->
-              <%
+              <!-- commented out and altered to avoid errors -->
+            <!--
 		if(plantResultInfo)
 		{
 			var results = '';
@@ -150,9 +151,9 @@
 			{
 				results += '<li class="list-group-item"> <a class="nav-link" href="plant_choice=' + item.id + '"> ' + item.name + ' </a></li>';
 
-			}); %>
-			<%- results %>
-		<%} %>
+			});
+			results
+		} -->
           </tbody>
       </table>
   </div>

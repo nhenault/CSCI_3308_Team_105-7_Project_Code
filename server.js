@@ -95,9 +95,9 @@ app.post('/login', function(req, res){
   }
   else{
     try{
-      if(await bcrypt.compare(req.body.passwordID, passworddb.password)){
-        res.redirect('/searchpage')
-      }
+      // if(await bcrypt.compare(req.body.passwordID, passworddb.password)){
+      //   res.redirect('/searchpage')
+      // }
     }
     catch{
       res.send('Invalid password')
