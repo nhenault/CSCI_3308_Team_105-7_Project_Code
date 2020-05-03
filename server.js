@@ -30,6 +30,14 @@ const dbConfig = {
 	password: 'botanizer'
 };
 
+const dbConnection = {
+	host: 'localhost',
+	port: 5432,
+	database: 'botanizerLogin',
+	user: 'postgres',
+	password: 'botanizer'
+};
+
 var db = pgp(dbConfig);
 
 // set the view engine to ejs
@@ -77,28 +85,42 @@ app.get('/login', function(req, res){
 
 // Post request to check if the info provided matches a user in the database
 app.post('/login', function(req, res){
-  try{
-    res.redirect('/searchpage')
+  var emailQuery = 'SELECT * FROM logindatabase WHERE  email = ' + req.body.emailID + ';';
+  var passwordQuery = 'SELECT * FROM logindatabase WHERE  password = ' + req.body.passwordID + ';';
+  var emaildb = dbConnection.query(emailQuery);
+  var passworddb = dbConnection.query(passwordQuery);
+  if(emaildb == null){
+    return res.send('User with given email not found')
+    res.redirect('/login')
   }
-  catch{
-   res.redirect('/login')
+  else{
+    try{
+      if(await bcrypt.compare(req.body.passwordID, passworddb.password)){
+        res.redirect('/searchpage')
+      }
+    }
+    catch{
+      res.send('Invalid password')
+      res.redirect('/login')
+    }
   }
 });
 
 // Post request that adds the new  user to the database
 app.post('/register', async function(req, res){
-   try{
-     const hashedPassword = await bcrypt.hash(req.body.passwordID, 10)
-     users.push({
-       id: Date.now().toString(),
-       email: req.body.emailID,
-       password: req.body.passwordID
-     })
-     res.redirect('/login')
-   }
-   catch{
-    res.redirect('/register')
-   }
+    var emailQuery = 'SELECT * FROM logindatabase WHERE  email = ' + req.body.emailID + ';';
+    var emaildb = dbConnection.query(emailQuery);
+    if(emaildb == null){
+      const hashedPassword = await bcrypt.hash(req.body.passwordID, 10)
+      var userQuery = 'INSERT INTO table_name (id, email, password) VALUES (' + Date.now().toString() + ', ' + req.body.emailID + ',' + hashedPassword + ');';
+      var newUser = dbConnection.query(userQuery);
+      res.redirect('/login')
+    }
+    else{
+      res.send('An account with that email already exists')
+      res.redirect('/register')
+    }
+
 });
 
 
